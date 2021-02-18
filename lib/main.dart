@@ -29,6 +29,8 @@ String verifyId;
 
 
 phoneAuthMethod() async{
+  print("object");
+
   print("+91${numberController.text}");
 
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -42,6 +44,8 @@ phoneAuthMethod() async{
         },
         verificationFailed: (FirebaseAuthException e) {
 
+
+          print(e.message);
 
           if (e.code == 'invalid') {
             print('Number is not valid');
